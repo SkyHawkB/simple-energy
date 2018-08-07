@@ -9,7 +9,7 @@ import net.minecraft.item.ItemBlock;
 public class BlockBase extends Block {
     private String name;
 
-    public BlockBase(Material material, String name) {
+    BlockBase(Material material, String name) {
         super(material);
         this.name = name;
 
@@ -21,7 +21,7 @@ public class BlockBase extends Block {
         SimpleEnergy.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, name);
     }
 
-    public Item createItemBlock() {
+    public Item getItemBlock() {
         return new ItemBlock(this).setRegistryName(getRegistryName());
     }
 }

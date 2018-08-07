@@ -1,5 +1,7 @@
 package com.github.skyhawkb.simpleenergy;
 
+import com.github.skyhawkb.simpleenergy.blocks.ModBlocks;
+import com.github.skyhawkb.simpleenergy.items.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
@@ -25,7 +27,6 @@ public class SimpleEnergy {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-
     }
     @Mod.EventHandler
     public void init(FMLInitializationEvent e) {
@@ -37,18 +38,20 @@ public class SimpleEnergy {
     }
 
     @Mod.EventBusSubscriber
-    public class RegistrationHandler {
+    public static class RegistrationHandler {
         @SubscribeEvent
-        public void registerBlocks(RegistryEvent<Block> e) {
-
+        public static void registerBlocks(RegistryEvent.Register<Block> e) {
+            ModBlocks.register(e.getRegistry());
         }
         @SubscribeEvent
-        public void registerItems(RegistryEvent<Item> e) {
-
+        public static void registerItems(RegistryEvent.Register<Item> e) {
+            ModBlocks.registerItems(e.getRegistry());
+            ModItems.register(e.getRegistry());
         }
         @SubscribeEvent
-        public void registerModels(ModelRegistryEvent e) {
-
+        public static void registerModels(ModelRegistryEvent e) {
+            ModBlocks.registerModels();
+            ModItems.registerModels();
         }
     }
 }

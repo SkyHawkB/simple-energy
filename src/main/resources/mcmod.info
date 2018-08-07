@@ -2,7 +2,7 @@
 {
   "modid": "simpleenergy",
   "name": "Simple Energy Transport",
-  "description": "Mod adds simple energy transportation systems.",
+  "description": "A mod that adds simple energy transportation systems.",
   "version": "1.0.0",
   "mcversion": "1.12.2",
   "url": "",
